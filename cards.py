@@ -1,4 +1,5 @@
 from random import randint
+from statistical import get_dist, get_odds
 
 def generate_deck(num_of_deck):
 	suits = ['H','S','C','D']
@@ -20,4 +21,8 @@ def generate_deck(num_of_deck):
 
 
 decks = generate_deck(10)
-print(decks)
+#print(decks)
+
+
+deck_dist = get_dist(decks)
+print(deck_dist)
