@@ -17,8 +17,8 @@ def get_odds(simnum,distribution):
 	"""
 	prob = {}
 	
-	for die in distribution:
-		result = distribution[die]
-		prob[die] = result/float(simnum)
+	for record in distribution:
+		result = distribution[record]
+		prob[record] = result/float(simnum)
 	
 	return prob

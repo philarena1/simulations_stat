@@ -26,3 +26,7 @@ decks = generate_deck(10)
 
 deck_dist = get_dist(decks)
 print(deck_dist)
+
+odds = get_odds(simnum = len(decks), distribution=deck_dist)
+print(odds)
+
