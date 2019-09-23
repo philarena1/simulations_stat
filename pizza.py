@@ -37,6 +37,11 @@ def make_dough():
 		'min_time': 15, 
 		'mode_time': 20, 
 		'max_time': 30},
+		# Step 3: mix yeast and wait
+	4 :{'action': 'let rest', 
+		'min_time': 120, 
+		'mode_time': 1440, 
+		'max_time': 2880},
 
 	}
 
