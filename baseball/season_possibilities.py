@@ -23,13 +23,11 @@ games = [
 {'team1':'Brewers','team2':'Rockies','date':'2019-09-29'},
 
 
-#{'team1':'Nationals','team2':'Phillies','date':'2019-09-24-0'},
-#{'team1':'Nationals','team2':'Phillies','date':'2019-09-24-1'},
-{'team1':'Nationals','team2':'Phillies','date':'2019-09-25'},
-{'team1':'Nationals','team2':'Phillies','date':'2019-09-26'},
-{'team1':'Nationals','team2':'Indians','date':'2019-09-27'},
-{'team1':'Nationals','team2':'Indians','date':'2019-09-28'},
-{'team1':'Nationals','team2':'Indians','date':'2019-09-29'}
+
+{'team1':'Diamondbacks','team2':'Cardinals','date':'2019-09-25'},
+{'team1':'Diamondbacks','team2':'Padres','date':'2019-09-27'},
+{'team1':'Diamondbacks','team2':'Padres','date':'2019-09-28'},
+{'team1':'Diamondbacks','team2':'Padres','date':'2019-09-29'}
 
 ]
 
@@ -39,10 +37,10 @@ games = [
 
 
 
-current_wins = {'Mets': 81, 
-'Cubs': 74, 
-'Brewers':86 , 
-'Nationals':87}
+current_wins = {'Mets': 82, 
+'Cubs': 82, 
+'Brewers':87, 
+'Diamondbacks':81}
 
 
 import itertools
@@ -85,7 +83,7 @@ def wins_per_team(universe,contending_teams):
 
 results = simulate_season(games)
 
-contending_teams = ['Mets','Cubs','Brewers','Nationals']
+contending_teams = ['Mets','Cubs','Brewers','Nationals','Diamondbacks']
 winnng_universe = 0
 losing_universe = 0
 season_winning = []
@@ -96,8 +94,8 @@ for game in results:
     for team in win_per:
         season[team] = (current_wins[team] + win_per[team])
     season_winning.append(season)
-    top_2 = sorted(season, key=season.get, reverse=True)[:2]
-    if 'Mets' in top_2:
+    top = sorted(season, key=season.get, reverse=True)[:1]
+    if 'Mets' in top:
         print('win')
         winnng_universe += 1
 
@@ -109,6 +107,5 @@ total_uni = winnng_universe + losing_universe
 print('Out of %s total universes \n' % str(total_uni))
 print('The Mets will lose in %s \n' % str(losing_universe))
 print('And the Mets will win in %s \n' % str(winnng_universe))
-
 
 
